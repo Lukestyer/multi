@@ -1,0 +1,36 @@
+<?php
+$title = 'Prospective Students';
+$this->headTitle($title);
+?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+<!-- <p>
+     <a href="<?php echo $this->url('peninsula', array('action'=>'add'));?>">Add new album</a>
+ </p>-->
+
+ <table class="table">
+ <tr>
+     <th>Name</th>
+     <th>Surname</th>
+     <th>Email Address</th>
+     <th>Telephone</th>
+     <th>&nbsp;</th>
+ </tr>
+ <?php foreach ($students as $stud) : ?>
+ <tr>
+     <td><?php echo $this->escapeHtml($stud->firstName);?></td>
+     <td><?php echo $this->escapeHtml($stud->lastName);?></td>
+     <td><?php echo $this->escapeHtml($stud->email);?></td>
+     <td><?php echo $this->escapeHtml($stud->phone);?></td>
+<!--     <td>
+         <a href="<?php echo $this->url('peninsula',
+             array('action'=>'edit', 'studID' => $stud->studID));?>">Edit</a>
+         <a href="<?php echo $this->url('peninsula',
+             array('action'=>'delete', 'studID' => $stud->studID));?>">Delete</a>
+     </td>-->
+ </tr>
+ <?php endforeach; ?>
+ </table>
+
+
+
+

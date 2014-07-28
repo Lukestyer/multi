@@ -1,0 +1,22 @@
+<?php
+ $title = 'Register';
+ $this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+ <?php
+ $form->setAttribute('action', $this->url('peninsula', array('action' => 'register')));
+ $form->prepare();
+
+ echo $this->form()->openTag($form);
+ echo $this->formHidden($form->get('studID'));
+ echo "<br/>";
+ echo $this->formRow($form->get('firstName'));
+ echo "<br/>";
+ echo $this->formRow($form->get('lastName'));
+ echo "<br/>";
+ echo $this->formRow($form->get('email'));
+ echo "<br/>";
+ echo $this->formRow($form->get('phone'));
+  echo "<br/>";
+ echo $this->formSubmit($form->get('submit'));
+ echo $this->form()->closeTag();
